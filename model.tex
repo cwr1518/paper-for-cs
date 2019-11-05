@@ -1,15 +1,33 @@
 %!TEX root = main.tex
-\section{Modeling and Formulation}
+\section{Problem and Statement}
 \label{sec:model}
 
-Model/formulate the problem in this section.
+BGMDD(bipartite graph matching with dynamic duration) problem(Sec. \uppercase\expandafter{\romannumeral3}-A)  and important concepts such as regret(Sec. \uppercase\expandafter{\romannumeral3}-B) are defined in this section. Table \uppercase\expandafter{\romannumeral1} lists the notation and basic definitions.
 
-\subsection{Definition and Theorem and more}
+\subsection{Problem Definition}
 
 \begin{definition}
-A kitten is a juvenile cat.
+(Dynamic Bipartite Graph, DBG). \emph{A dynamic bipartite graph is defined as $B=(L,R,E)$, where $L=\{i \in \mathbb{N}\}$ and  $R={j \in \mathbb{N}}$ are  the sets of left and right nodes and $E\in L\times R$ is the set of edges between $L$ and $R$. The node in $L$ or $R$ arrives independently from known probability distributions $P_{L}=\{p_l\}$ or $P_{R}=\{p_r\}$. Each node $i(j)$ arrives at time i(j), which is meaning to abuse the index to denote the nodes' arriving time. Each node has duration denoted by $i.d(j.d)$. If a node is not matched during the duration, the node would leave. Each edge $(i,j)\in E$ has a weight denoted by $e_ij$ obeyed a distribution $P_E=\{p_e\}$.}
+\end{definition}
+\begin{definition}
+(Matching Allocation). \emph{A matching allocation over a dynamic bipartite graph B is denoted by $M =\{(i, j)|i \in L, j \in R\}$. It is a set of node pairs where each node appears at most once.The utility score of a matching allocation $M$ over a dynamic bipartite graph $B$ is measured by $U(B, M) = \{(i,j)\in M w(i, j)\}$.}
 \end{definition}
 
+\par In a real word, the nodes arriving distributions ($P_{L}=\{p_l\}$  $P_{R}=\{p_r\}$ ) and the edge weight distribution($P_E=\{p_e\}$) may change after some time. But it's easy to confirm the changes by collecting statistics. So in order to analysis convenient, we assume the distributions($P_{L}=\{p_l\}$, $P_{R}=\{p_r\}$ and $P_E=\{p_e\}$) are permanent. Alough by collecting statistics some changes could be measured, the change of duration of nodes can not be measured unless we doesn't match nodes and wait until the nodes leaving. It's impossible to do that to measure the changed of the duration. 
+
+\begin{definition}
+(Dynamic Duration Distribution.) \emph{Each node's duration obey a distribution $P_ld$(or $P_rd$) independently. In this paper, we first analyze the situation that the durations of nodes in  $L$ and $R$ obey the same distribution $P_d$, $P_d=P_ld= P_rd$. $P_d$ can change after some time unknown.  And we assume the type of the distribution should be pernament. The change of $P_d$ is the decrease or increase of expectation of distribution.  The length of the time in which $P_d$ is stable should not be short. }
+\end{definition}
+\par The change of duration distribution could be observed in many application scenarios. For example, in the food felivered scene, the customers' patient (which could be considered as duration) are always good in the early time,like 10:30 am (people are not very hungry), but very bad in1:30 am. The same situation would exist in online taxi-hailing service.
+\begin{example}
+xxxxxxxx
+\end{example}
+\begin{definition}
+(BGMDD problem). \emph{Give a dynamic bipartite graph with duration changed dynamic, the BGMDD problem is to find a matching allcation $M$ to maximize the utility score in the online scenario. }
+\end{definition}
+\par The BGMDD problem inherits and develops the two-sided online maximum bipartite matching problem in which the duration is  given upon nodes' arrival. And it's also different from ......xxxx
+
+\subsection{ Evaluation Metric}
 \begin{property}
 Kittens are cute.
 \end{property}
