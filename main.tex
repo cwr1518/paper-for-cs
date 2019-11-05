@@ -1,0 +1,77 @@
+\documentclass[conference]{IEEEtran}
+
+\usepackage{cite}
+
+\usepackage[cmex10]{amsmath}
+
+\usepackage[pdftex]{graphicx}
+
+\usepackage{tabularx}
+
+
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+\usepackage[tight,footnotesize]{subfigure}
+
+
+
+\begin{document}
+
+
+\newtheorem{definition}{\textbf{Definition}}
+\newtheorem{lemma}{\textbf{Lemma}}
+\newtheorem{theorem}{\textbf{Theorem}}
+\newtheorem{claim}{\textbf{Claim}}
+\newtheorem{corollary}{\textbf{Corollary}}
+\newtheorem{observation}{\textbf{Observation}}
+\newtheorem{property}{\textbf{Property}}
+
+
+
+\title{How to write papers using LaTex}
+
+\author{\IEEEauthorblockN{
+Chick\IEEEauthorrefmark{1},
+Duck\IEEEauthorrefmark{2}}
+\IEEEauthorblockA{\IEEEauthorrefmark{1}State Key Laboratory for Novel Software Technology, Nanjing University, Nanjing 210024, China}
+\IEEEauthorblockA{\IEEEauthorrefmark{2}Department of Computer Science, City University of Hong Kong, Hong Kong}
+}
+
+\maketitle
+
+\begin{abstract}
+This article describes how to use LaTex to write academic papers. It is written to help absolute beginners to gain a glimpse of how academic paper is organized using LaTex. Technical details and fancy tricks of LaTex will not be covered in this article(as I do not know any of them). Hopefully, this can serve as a template or maybe a reference when some of us set out to write a paper. 
+\end{abstract}
+
+% It is common practice to organize your paper into multiple latex files
+% Here, we put only abstract in the main.tex
+
+\input{intro}
+\input{related}
+\input{model}
+\input{alg}
+\input{eval}
+\input{conclusion}
+
+% remember \usepackage[cmex10]{amsmath}
+
+% remember \usepackage{algorithmic} \usepackage{algorithm}
+
+
+% remember  \usepackage[pdftex]{graphicx}  \usepackage[tight,footnotesize]{subfigure} \usepackage{tabularx}
+
+
+%if figures don't align horizontally, try adjusting {0.x\textwidth} and [width=xinch]
+
+
+\section{Acknowledgement}
+We thank the anonymous reviewers for their helpful comments on draft of this paper.
+The work is partly supported by XX project(maybe not).
+
+\bibliography{cite}
+\bibliographystyle{abbrv}
+
+\input{appendices}
+
+\end{document}
