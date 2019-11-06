@@ -1,10 +1,26 @@
 %!TEX root = main.tex
 \section{Solution based on bandit with static-batch arms }
 \label{sec:alg}
-
+\par In this section, we would describe the basic idea why we need the bandit algorithm to solve BGMDD problem and the detail about the algorithm based on bandit with static-batch arms. At first, a approach to turn $P_d$ into a const would be introduced to make the following analysis easier.  Then, the batch way to slove DBG probelm would be introduced and the bound of the score expectation using a specific static batch would be calculated. Next, we would state that it's a bandit problem when we use batch way to solve BGMDD problem and the bandit algorithm we use in this paper, discounted UCB, would be introduced. Finally, the theoretical performance of above algorithms in BGMDD problem would be anaylze.
 \subsection{Expectation Approximate}
-\par In real application scenarios, the durations of nodes are always  
+\par As the statement in section xx, the durations of nodes always obey some distribution in real application scenarios. But it's difficult to anaylze the performance of alforithms when the duration is a distribution. So we abuse the expectation of the distribution, $E_d$, to replace $P_d$ in the following anaylsis. When the duration is a constant,i.e. $E_d$, we use $T_e$ to represent the total score. When the duration is a distribution, i.e. $P_d$, we use $T_p$ to represent the total score. Then we can get the difference when we use $E_d$ to represent $P_d$ in the anaylsis in \textbf{Theorem 1}.
+\begin{theorem}\label{theorem:TheFatTreeInApx}
+When the distribution is limited(like 99\% value in distribution is limited), we can find the max value and min value in $P_d$, denoted by $D_{max}$ and $D_{min}$. When duration is $D_{max}$ or $D_{min}$, the total score is represented by $T_{D_{max}}$ or $T_{D_{min}}$. The difference between $T_d$ and $T_e$ can be no higher then the difference between $T_{D_{max}}$ and $T_{D_{min}}$. Which is meaning that for any giving distribution $P_d$ if we can find $D_max$ and $D_min$ we have:
+$$\left| T_d-T_e \right|\leq\left| T_{D_{max}}-T_{D_{min}} \right|$$
+\end{theorem}
+\begin{IEEEproof}
+It's obviously that we need make $P_R$, $P_L$, $P_E$ and the way to solve BGMDD problem keep the same when the duration is changed. In this situation, when the duration is bigger, the total score must be bigger. So we have:
+$$ T_{D_{min}}\leq T_d \leq T_{D_{max}} $$
+\par Considered that $E_d$ is the expectation of  $P_d$, we have:
+$$D_{min}\leq E_d \leq D_{max}$$
+\par Combined above anaylsis we have:
+$$ T_{D_{min}}\leq T_e \leq T_{D_{max}} $$
+\par Make the first inequation subtract the third inequation, we have:
+$$ T_{D_{min}}-T_{D_{max}}\leq T_d-T_e \leq T_{D_{max}}-T_{D_{min}} $$
+\par Rearranging, we obtain that
+$$\left| T_d-T_e \right|\leq\left| T_{D_{max}}-T_{D_{min}} \right|$$
 
+\end{IEEEproof}
 
 \begin{algorithm}[H]
 \caption{Put your caption here}

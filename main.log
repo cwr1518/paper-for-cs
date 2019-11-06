@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.9)  6 NOV 2019 16:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.9)  7 NOV 2019 07:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -287,7 +287,14 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 (c:/texlive/2019/texmf-dist/tex/latex/subfigure/subfigure.cfg)
 \subfig@top=\skip56
 \subfig@bottom=\skip57
-) (./main.aux)
+) (./main.aux
+
+LaTeX Warning: Label `theorem:TheFatTreeInApx' multiply defined.
+
+
+LaTeX Warning: Label `fig:DCN' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
@@ -389,20 +396,16 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 41.
 (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (./intro.tex)
-(./related.tex
-
-LaTeX Warning: Citation `adams_davies_2009' on page 1 undefined on input line 6
-.
-
-) (./model.tex [1{c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+(./related.tex) (./model.tex [1{c:/texlive/2019/texmf-var/fonts/map/pdftex/updm
+ap/pdftex.map}
 
 
 ]) (./alg.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2486) has occurred while \output is active []
 
-)
+ [2])
 (./eval.tex
-<Fig/DCN.pdf, id=16, 781.74359pt x 597.45204pt>
+<Fig/DCN.pdf, id=20, 781.74359pt x 597.45204pt>
 File: Fig/DCN.pdf Graphic file (type pdf)
 <use Fig/DCN.pdf>
 Package pdftex.def Info: Fig/DCN.pdf  used on input line 11.
@@ -416,7 +419,7 @@ Overfull \hbox (5.20657pt too wide) in paragraph at lines 23--23
  [][] 
  []
 
-<Fig/WAN.pdf, id=17, 782.50644pt x 597.45204pt>
+<Fig/WAN.pdf, id=21, 782.50644pt x 597.45204pt>
 File: Fig/WAN.pdf Graphic file (type pdf)
 <use Fig/WAN.pdf>
 Package pdftex.def Info: Fig/WAN.pdf  used on input line 29.
@@ -434,18 +437,17 @@ File: Fig/WAN.pdf Graphic file (type pdf)
 <use Fig/WAN.pdf>
 Package pdftex.def Info: Fig/WAN.pdf  used on input line 42.
 (pdftex.def)             Requested size: 115.63243pt x 88.28294pt.
-<Fig/RTDCN.pdf, id=18, 779.7163pt x 597.45204pt>
+<Fig/RTDCN.pdf, id=22, 779.7163pt x 597.45204pt>
 File: Fig/RTDCN.pdf Graphic file (type pdf)
 <use Fig/RTDCN.pdf>
 Package pdftex.def Info: Fig/RTDCN.pdf  used on input line 49.
 (pdftex.def)             Requested size: 115.63243pt x 88.60202pt.
-<Fig/RTWAN.pdf, id=19, 776.8707pt x 597.45204pt>
+<Fig/RTWAN.pdf, id=23, 776.8707pt x 597.45204pt>
 File: Fig/RTWAN.pdf Graphic file (type pdf)
 <use Fig/RTWAN.pdf>
 Package pdftex.def Info: Fig/RTWAN.pdf  used on input line 52.
 (pdftex.def)             Requested size: 115.63243pt x 88.92108pt.
-) (./conclusion.tex [2 <./Fig/DCN.pdf, page is rotated 90 degrees> <./Fig/WAN.p
-df, page is rotated 90 degrees>]) (./main.bbl) (./appendices.tex)
+) (./conclusion.tex) (./main.bbl) (./appendices.tex)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -457,39 +459,36 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[3
+[3 <./Fig/DCN.pdf, page is rotated 90 degrees> <./Fig/WAN.pdf, page is rotated 
+90 degrees>] [4 <./Fig/RTDCN.pdf, page is rotated 90 degrees> <./Fig/RTWAN.pdf,
+ page is rotated 90 degrees>] (./main.aux)
 
- <./Fig/RTDCN.pdf, page is rotated 90 degrees> <./Fig/RTWAN.pdf, page is rotate
-d 90 degrees>] (./main.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  4558 strings out of 492166
  65290 string characters out of 6129147
- 139818 words of memory out of 5000000
+ 141096 words of memory out of 5000000
  8829 multiletter control sequences out of 15000+600000
  46211 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  46i,13n,30p,774b,329s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2019/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2019/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsy8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
-0.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/
-2019/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb><c:/texlive/2019/texmf-dist/f
-onts/type1/urw/times/utmr8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/tim
-es/utmri8a.pfb>
-Output written on main.pdf (3 pages, 225893 bytes).
+nts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2019/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/
+texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2019/texmf
+-dist/fonts/type1/urw/times/utmbi8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1
+/urw/times/utmr8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a
+.pfb>
+Output written on main.pdf (4 pages, 239292 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
- 63 compressed objects within 1 object stream
+ 102 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
