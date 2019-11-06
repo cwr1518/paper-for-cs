@@ -27,7 +27,22 @@ xxxxxxxx
 \end{definition}
 \par The BGMDD problem inherits and develops the two-sided online maximum bipartite matching problem in which the duration is  given upon nodes' arrival. And it's also different from ......xxxx
 
-\subsection{ Evaluation Metric}
+\subsection{MDP and Bandit Modeling for BGMDD problem}
+\par When the duration distribution is permanent, [X] states that the batch splitting way to solve DBG problem (dynamic bipartite graph) is a \emph{Markov decision process (MDP)}. The current sets of  left and right nodes and edges can be considered as state space, $\mathcal{S}$. The way to match the nodes, include matching or not matching and how to match, could be considered as action space, $\mathcal{A}$. Obviously, when $P_R$, $P_L$, $P_e$ and $P_d$ are pernament, the transition distribution, $T_r:(\mathcal{S} \times \mathcal{A} \times \mathcal{S})$, is deterministic. The  utility score of matching is the reward, $R_w:(\mathcal{S} \times \mathcal{A}\rightarrow \mathbb{R})$. The target is to maxmine the cumulative score.
+\par But when the duration distribution is dynamic, the analyzation should be changed. Because when $P_d$ is dynamic, the the transition distibution is dynamic too. The process should not be considered as standard \emph{MDP}. Instead, the total process can be considered as the combination of bandit problem and  \emph{standard MDP}. We can find that process during the stable time of $P_d$ is \emph{standard MDP} . So the problem translates into \emph{multi-MDPs}. If we can measure the change of $P_d$, we just need to switch solving strategy to the corresponding \emph{MDP}. 
+\par But as mention above, the changed of $P_d$ can not be measured directly. So the problem becomes a bandit problem. We can use a ``strategy'' to decide how to match, and after a round(include hundreds of time interval) we need to calculate the total ``reward''(cumulative score) and decide which strategy should be used for next round according to the history. So the strategys corresponding to different \emph{standard MDPs} are considered as ``arms'' in bandit literature. The ``bandit'' property of  BGMDD problem would be proved in section$xx$.
+\par In conclusion, the process of BGMDD problem is \emph{MDP} from micro aspect and a ``bandit problem'' in macro angle.
+
+\subsection{Evaluation Metric}
+\subsubsection{Competitive Ratio}
+xxx
+\subsubsection{Regret}
+xxx
+
+\subsection{Greedy Algorithm}
+
+
+
 \begin{property}
 Kittens are cute.
 \end{property}
