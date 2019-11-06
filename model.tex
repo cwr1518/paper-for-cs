@@ -40,7 +40,9 @@ xxx
 xxx
 
 \subsection{Greedy Algorithm}
-
+\par If we don't care about the total score or competitive ratio, almost all dynamic bipartite graph problem could be solved by Greedy algorithm. Greedy algorithm matches the nodes with the maximum edge weight, and don't match when no nodes can be matched. 
+\par  Greedy algorithm don't use the duration actively, for it always matches nodes as soon as possible. So compared to other algorithms which use duration to wait for the better match,  Greedy algorithm can't get the better result. But as compensation, Greedy algorithm is so stablely that the  number of  ``losing node'' which mean the nodes isn't matched during the their duration and leave may be less.
+\par It seems that the score of Greedy algorithm is unrelated to duration. However their relevance are very strong. We would prove that there is a positive correlation between the score of Greedy algorithm and the duration(Section xxx).
 
 
 \begin{property}
@@ -59,22 +61,7 @@ People love kittens.
 Trivial.
 \end{IEEEproof}
 
-\subsection{LP formulation}
-An example:
 
 \begin{subequations}\label{opt:mcup}
-\begin{align}
-\text{minimize} & \quad\max_{e \in E,s \in \{1, 2, \dots, n-1 \}} \mu_e^s \quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\eqref{opt:mcup}\notag\\
-\text{subject to} & \quad {\sum_{f \in F_{sp} \cup F_{mp}} d^f {\sum_{p \in P(f): e\in p} \max(x_{f,p}^s},x_{f,p}^{s+1})}
-\leq \mu_e^s C_{e}, \notag \\
-& \quad\quad\forall e \in E, \forall s \in \{1, 2, \dots, n-1 \}, \label{equ:CapacityConstraint}\\
-& \quad{\sum_{p \in P(f)} x_{f,p}^s} = 1, \notag \\
-& \quad\quad\forall f \in F_{sp} \cup F_{mp}, \forall s \in \{2, 3, \dots, n-1 \}, \label{equ:SumConstraint}\\
-& \quad x_{f,p}^s \in \{0,1\}, \notag \\
-& \quad\quad\forall f \in F_{sp}, \forall p \in P(f), \forall s \in \{2, 3, \dots, n-1 \}, \label{equ:SinglePath}\\
-& \quad x_{f,p}^s \geq 0, \notag \\
-& \quad\quad\forall f \in F_{mp}, \forall p \in P(f), \forall s \in \{2, 3, \dots, n-1 \},
-\label{equ:Multipath}\\
-& \quad\mu_e^s > 0, \forall e \in E, \forall s \in \{1, 2, \dots, n-1 \}. \label{equ:ObjPositiveCostraint}
-\end{align}
+
 \end{subequations}
