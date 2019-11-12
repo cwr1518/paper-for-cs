@@ -1,0 +1,73 @@
+%!TEX root = main.tex
+\section{Solution based on bandit with static-batch arms }
+\label{sec:alg}
+\par In this section, we would describe the basic idea why we need the bandit algorithm to solve BGMDD problem and the detail about the algorithm based on bandit with static-batch arms. At first, a approach to turn $P_d$ into a const would be introduced to make the following analysis easier.  Then, the batch way to slove DBG probelm would be introduced and the bound of the score expectation using a specific static batch would be calculated. Next, we would state that it's a bandit problem when we use batch way to solve BGMDD problem and the bandit algorithm we use in this paper, discounted UCB, would be introduced. Finally, the theoretical performance of above algorithms in BGMDD problem would be anaylze.
+\subsection{Expectation Approximate}
+\par As the statement in section xx, the durations of nodes always obey some distribution in real application scenarios. But it's difficult to anaylze the performance of alforithms when the duration is a distribution. So we abuse the expectation of the distribution, $E_d$, to replace $P_d$ in the following anaylsis. When the duration is a constant,i.e. $E_d$, we use $T_e$ to represent the total score. When the duration is a distribution, i.e. $P_d$, we use $T_p$ to represent the total score. Then we can get the difference when we use $E_d$ to represent $P_d$ in the anaylsis in \textbf{Theorem 1}.
+\begin{theorem}\label{theorem:TheFatTreeInApx}
+When the distribution is limited(like 99\% value in distribution is limited), we can find the max value and min value in $P_d$, denoted by $D_{max}$ and $D_{min}$. When duration is $D_{max}$ or $D_{min}$, the total score is represented by $T_{D_{max}}$ or $T_{D_{min}}$. The difference between $T_d$ and $T_e$ can be no higher then the difference between $T_{D_{max}}$ and $T_{D_{min}}$. Which is meaning that for any giving distribution $P_d$ if we can find $D_max$ and $D_min$ we have:
+$$\left| T_d-T_e \right|\leq\left| T_{D_{max}}-T_{D_{min}} \right|$$
+\end{theorem}
+\begin{IEEEproof}
+It's obviously that we need make $P_R$, $P_L$, $P_E$ and the way to solve BGMDD problem keep the same when the duration is changed. In this situation, when the duration is bigger, the total score must be bigger. And Considered that $E_d$ is the expectation of  $P_d$, So we have the following three inequations:
+{\setlength\abovedisplayskip{1pt}
+\setlength\belowdisplayskip{1pt}
+\begin{spacing}{1.0}
+$$ T_{D_{min}}\leq T_d \leq T_{D_{max}} $$
+$$D_{min}\leq E_d \leq D_{max}$$
+$$ T_{D_{min}}\leq T_e \leq T_{D_{max}} $$
+\par Make the first inequation subtract the third inequation, we have:
+$$ T_{D_{min}}-T_{D_{max}}\leq T_d-T_e \leq T_{D_{max}}-T_{D_{min}} $$
+\par Rearranging, we obtain that
+$$\left| T_d-T_e \right|\leq\left| T_{D_{max}}-T_{D_{min}} \right|$$
+\end{spacing}}
+\end{IEEEproof}
+\par As we don't consider the property of specific distribution, the bound is actually very loose. For some special dirtribution, like normal distribution, $D_{max}$ could be replaced by the value bigger then the 95\% values in distribution. And so as the $D_{min}$.
+\par According to \textbf{Theorem 1},   the difference between $T_d$ and $T_e$ depends on the difference between $T_{D_{max}}$ and $T_{D_{min}}$. We  would prove that when the values of   $D_{max}$ and $D_{min}$ is much bigger then  the difference between $D_{max}$ and $D_{min}$ the difference between $T_{D_{max}}$ and $T_{D_{min}}$ would be small in section xxx. Under this situation, we can replace the distribution $P_d$ by its expection  $E_d$ to analyze the process.
+
+\subsection{Batch-based method}
+\par Batch-based method is to divide DBG probelm into a batch partition problem. The main idea of batch method is to wait for a specific duration(the length of batch) and then match the existing nodes in the graph by Hungarian algorithm[x]. It's a very simple and valid method to solve DBG problem, because when the node can wait for the better, batch method can accumulate enough nodes to make a better match.
+\par It's obvious that the score of  a match at the end of  a batch duration depends on how much the nodes exsit in current graph. When the number of nodes is bigger, the score is bigger. 
+\begin{theorem}\label{the score of  a match}
+Assume $e_1, e_2,..., e_n$ are n independent identically distributed variables obeying $P_E$. Then we consider the expection of max value among $e_1, e_2,..., e_n$ as $X(n)$ which means $X(n)=E(max(e_1, e_2,..., e_n))$. When $P_E$ and $n$ are specified, $X(n)$ is determinated. And when $n$ is increasing, $X(n)$  is increasing which means the $X(n)$ is monotone increasing with $n$. When the number of left nodes is $L$ and the number of right number is $R$ at the matching moment, we have the bound of score expection:
+$$\sum_{i=1}^n{X(m-i)} \leq E(T(L,R))\leq nX(m)$$ 
+$$n=min(L,R), m=max(L,R)$$
+where $T(L,R)$ means the total score of this matching when  the number of left nodes is $L$ and the number of right number is $R$.
+\end{theorem}
+\begin{IEEEproof}
+ For convenience, we assume that $L$ is smaller than $R$. Then, we focus on left nodes, because there would be no left nodes left after matching when $L$ is smaller than $R$. In this situation, each left node has $R$ choices to match, but not all left node can choose the best choice because some best choices maybe correspond to the same right node. So the best situation is every left node's best choice is different from others, which means the expection of every left node's matching score is $X(R)$. So the total score is $L\times X(R)$ in the best situation. 
+ \par Now, consider the worst situstion. We first choose the largest weight edge and match corresponding nodes. Next, find another left node and we find that its best choice is matched, so its choice just $R-1$ left. So the node need to choose from the $R-1$ choice. Then the next left node come across again, it's equivalent that the node just have $R-2$ choice to choose at first. The situation happens again and again. So the expection of total score in this situation is  $\sum_{i=1}^L{X(R-i)}$. 
+ \par The worst situation could hardly happen if we use Hungarian algorithm to match the graph.xxxx So it's just the lower bound.xxxx
+\end{IEEEproof}
+
+\subsection{Optimal static batch duration at specific $E_d$}
+\par The simplest batch based method to solve DBG problem is to match all exsiting nodes in the graph using Hungarian algorithm periodically. Intuitively, under a specific $E_d$, the length of matching period would affect the total score.
+\par According to \emph{Theorem 2}, the total score in a matching depends on $L$ and $R$.  
+\begin{algorithm}[H]
+\caption{Put your caption here}
+\begin{algorithmic}[1]
+
+\Procedure{proc}{$a,b$}       \Comment{This is an example}
+    \State System Initialization
+    \State Read the value 
+    \If{$condition = True$}
+        \State Do this
+        \If{$Condition \geq 1$}
+        \State Do that
+        \ElsIf{$Condition \neq 5$}
+        \State Do another
+        \State Do that as well
+        \Else
+        \State Do otherwise
+        \EndIf
+    \EndIf
+
+    \While{$something \not= 0$}  \Comment{put some comments here}
+        \State $var1 \leftarrow var2$  \Comment{another comment}
+        \State $var3 \leftarrow var4$
+    \EndWhile  \label{roy's loop}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+

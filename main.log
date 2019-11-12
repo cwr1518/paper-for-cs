@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.9)  7 NOV 2019 07:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.9)  12 NOV 2019 14:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -199,6 +199,9 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 \Gin@req@height=\dimen135
 \Gin@req@width=\dimen136
 )
+(c:/texlive/2019/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
 (c:/texlive/2019/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2016/02/03 v2.11b `tabularx' package (DPC)
 
@@ -288,9 +291,6 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfig@top=\skip56
 \subfig@bottom=\skip57
 ) (./main.aux
-
-LaTeX Warning: Label `theorem:TheFatTreeInApx' multiply defined.
-
 
 LaTeX Warning: Label `fig:DCN' multiply defined.
 
@@ -400,10 +400,10 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ap/pdftex.map}
 
 
-]) (./alg.tex
-Underfull \vbox (badness 2486) has occurred while \output is active []
+]) (./Solution1.tex [2]
+Underfull \vbox (badness 3088) has occurred while \output is active []
 
- [2])
+)
 (./eval.tex
 <Fig/DCN.pdf, id=20, 781.74359pt x 597.45204pt>
 File: Fig/DCN.pdf Graphic file (type pdf)
@@ -447,7 +447,8 @@ File: Fig/RTWAN.pdf Graphic file (type pdf)
 <use Fig/RTWAN.pdf>
 Package pdftex.def Info: Fig/RTWAN.pdf  used on input line 52.
 (pdftex.def)             Requested size: 115.63243pt x 88.92108pt.
-) (./conclusion.tex) (./main.bbl) (./appendices.tex)
+) (./conclusion.tex) [3 <./Fig/DCN.pdf, page is rotated 90 degrees> <./Fig/WAN.
+pdf, page is rotated 90 degrees>] (./main.bbl) (./appendices.tex)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -459,36 +460,38 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[3 <./Fig/DCN.pdf, page is rotated 90 degrees> <./Fig/WAN.pdf, page is rotated 
-90 degrees>] [4 <./Fig/RTDCN.pdf, page is rotated 90 degrees> <./Fig/RTWAN.pdf,
- page is rotated 90 degrees>] (./main.aux)
+[4
+
+ <./Fig/RTDCN.pdf, page is rotated 90 degrees> <./Fig/RTWAN.pdf, page is rotate
+d 90 degrees>] (./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4558 strings out of 492166
- 65290 string characters out of 6129147
- 141096 words of memory out of 5000000
- 8829 multiletter control sequences out of 15000+600000
+ 4594 strings out of 492166
+ 65931 string characters out of 6129147
+ 142396 words of memory out of 5000000
+ 8861 multiletter control sequences out of 15000+600000
  46211 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  46i,13n,30p,774b,329s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2019/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2019/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2019/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/
-texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2019/texmf
--dist/fonts/type1/urw/times/utmbi8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1
-/urw/times/utmr8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a
-.pfb>
-Output written on main.pdf (4 pages, 239292 bytes).
+f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2019/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2019/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><
+c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texliv
+e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2019/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2019/texmf-d
+ist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/ur
+w/times/utmbi8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pf
+b><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (4 pages, 258432 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 110 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
